@@ -275,7 +275,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
         // Initialize Lenis
-        const lenis = new Lenis()
+        const lenis = new Lenis({
+      smoothWheel: true,   // Enable smooth scrolling for wheel events
+      wheelMultiplier: 0.3 // Change this value to control speed (default is 1)
+    })  
 
         function raf(time) {
             lenis.raf(time)

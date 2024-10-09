@@ -7,7 +7,6 @@
     <title>Document</title>
 
 </head>
-
 <style>
     * {
         padding: 0%;
@@ -15,7 +14,7 @@
         box-sizing: border-box;
     }
 
-    .section2 {
+    .subkoscroll {
         background-image: url("section2.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -24,8 +23,7 @@
         position: relative;
     }
 
-
-    .section2-bottomsection {
+    .subkoscroll-bottomsection {
         display: grid;
         grid-template-columns: 50% 50%;
         width: 100%;
@@ -34,7 +32,6 @@
         position: absolute;
         top: 80%;
     }
-
 
     .limitededition {
         border: 1px solid #D9D9D9;
@@ -45,7 +42,6 @@
         align-items: center;
         padding: 16px 53px;
     }
-
 
     .sourdoughbtn {
         margin-top: 20px;
@@ -61,7 +57,6 @@
         line-height: 11.83px;
         text-align: center;
         color: #D9D9D9;
-
     }
 
     .sectiontext2 {
@@ -72,7 +67,6 @@
         line-height: 32.76px;
         text-align: center;
         color: #D9D9D9;
-
     }
 
     .sectiontext3 {
@@ -82,7 +76,6 @@
         line-height: 11.83px;
         text-align: center;
         color: #D9D9D9;
-
     }
 
     .rightsideimagebox {
@@ -93,8 +86,7 @@
         flex-direction: column;
     }
 
-
-    .section2rightside {
+    .subkoscrollrightside {
         position: relative;
         z-index: 9;
         max-width: 430px;
@@ -103,7 +95,6 @@
         margin-top: 100px;
         margin-bottom: 100px;
     }
-
 
     .rightsideimagebox {
         padding: 0 20px;
@@ -119,9 +110,16 @@
     }
 
 
+    .sourdoughbtn {
+        font-family: Neue Haas Grotesk Text Pro;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 13.65px;
+        text-align: center;
+    }
 
     @media screen and (max-width:991px) {
-        .section2-bottomsection {
+        .subkoscroll-bottomsection {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -133,12 +131,12 @@
             display: none;
         }
 
-        .section2 {
+        .subkoscroll {
             background-image: url(./section2imageres.png);
             height: 100vh;
         }
 
-        .section2rightside {
+        .subkoscrollrightside {
             max-width: 300px;
             height: 100px;
             object-fit: cover;
@@ -151,15 +149,16 @@
         .sectiontext2 {
             font-size: 20px;
         }
+
     }
 </style>
 
 <body>
-    <div class="section2"></div>
-    <div class="section2-bottomsection">
+    <div class="subkoscroll"></div>
+    <div class="subkoscroll-bottomsection">
         <div class="none"></div>
         <div class="rightsideimagebox">
-            <img class="section2rightside" src="section2image.png" alt="text_White">
+            <img class="subkoscrollrightside" src="subkoimage.png" alt="text_White">
             <div class="limitededition">
                 <h2 class="sectiontext1">GET YOUR</h2>
                 <h2 class="sectiontext2">LIMITED EDITION</h2>
@@ -178,7 +177,7 @@
     <script>
         gsap.timeline({
             scrollTrigger: {
-                trigger: ".section2",
+                trigger: ".subkoscroll",
                 start: "0% 0%",
                 end: "50% top",
                 scrub: 3,
@@ -187,10 +186,9 @@
             }
         })
 
-
         gsap.timeline({
             scrollTrigger: {
-                trigger: ".section2-bottomsection",
+                trigger: ".subkoscroll-bottomsection",
                 start: "50% 50%",
                 end: "50% top",
                 scrub: 3,
@@ -202,7 +200,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 3,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         })
         function raf(time) {

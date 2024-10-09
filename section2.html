@@ -133,7 +133,8 @@ justify-content: space-around;
             background-image: url(./section2imageres.png);
         }
 .section2rightside{
-    margin-top: -300px;
+    /* margin-top: -300px; */
+    transform: translateY(-300px);
 }
         .section2rightside {
             max-width: 300px;
@@ -193,11 +194,11 @@ justify-content: space-around;
             scrollTrigger: {
                 trigger: ".section2",
                 start: "0% 0%",
-                end: "100% -100%",
+                end: "100% 20%",
                 scrub: 3,
                 pin: true,
                 pinSpacing: false,
-                // markers:true
+                markers:true
             }
         })
 
@@ -217,16 +218,7 @@ justify-content: space-around;
         let mm = gsap.matchMedia();
 
         mm.add("(max-width:991px)", () => {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".section2-bottomsection",
-                    start: "top top",
-                    end: "100% bottom",
-                    scrub: 3,
-                    pin: false,
-                    markers: true
-                }
-            })
+    
         })
 
     </script>

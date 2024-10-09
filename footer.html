@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .footer{
+            background: url("./footerbg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            /* height: 300vh; */
+            position: relative;
+        }
+        .footer-main{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* height: 100vh; */
+            position: relative;
+        }
+        .footer-left{
+            position: sticky;
+            top: 0;
+            display: grid;
+            place-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="footer">
+<div class="footer-main">
+<div class="footer-left">
+    <img src="./footersubko.png" alt="">
+</div>
+<div style="height: 100vh;"></div>
+<div style="height: 100vh;"></div>
+<div style="height: 100vh; display: grid; place-content: center;">
+    <div class="rightsideimagebox">
+        <img class="section2rightside" src="section2image.png" alt="text_White">
+        <div class="limitededition">
+            <h2 class="sectiontext1">GET YOUR</h2>
+            <h2 class="sectiontext2">LIMITED EDITION</h2>
+            <h2 class="sectiontext3">BEHNO NEW YORK x SUBKO TOTE BAG</h2>
+            <button class="sourdoughbtn">GET YOUR SOURDOUGH TOTE</button>
+        </div>
+    </div>
+</div>
+
+</div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+            // gsap.timeline({
+            //     scrollTrigger:{
+            //         trigger:".footer",
+            //         start:"top top",
+            //         end:"bottom top",
+            //         markers:true,
+            //         pin:true,
+            //         pinSpacing:false,
+            //         scrub:3
+            //     }
+            // })
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <script>
+        // Initialize Lenis
+        const lenis = new Lenis({
+            smoothWheel: true,   // Enable smooth scrolling for wheel events
+            wheelMultiplier: 0.3 // Change this value to control speed (default is 1)
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    </script>
+</body>
+
+</html>

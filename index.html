@@ -18,6 +18,7 @@
         background-image: url("subkobg.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         /* height: 500vh; */
         width: 100%;
         height: 100%;
@@ -74,6 +75,78 @@
         height: 50vh;
         display: grid;
         place-content: center;
+        padding: 0 20px;
+    }
+
+    #stick {
+        transform: translateX(-40px);
+    }
+
+    .bhenotext {
+        max-width: 380px;
+    }
+
+    .blogo {
+        max-width: 170px;
+    }
+
+    .infotext {
+        font-family: PP Editorial New;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 200;
+        line-height: 20.48px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #FFFFFF;
+        max-width: 380px;
+        width: 100%;
+    }
+
+
+    @media screen and (max-width:400px) {
+        .subko {
+            background-image: url("mobilebg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* height: 500vh; */
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+    }
+
+    @media screen and (max-width:500px) {
+        .bhenotext {
+            max-width: 244px;
+            width: 100%;
+        }
+
+        #stuck {
+            max-width: 113px;
+        }
+
+        #behnostuck {
+            max-width: 66px;
+        }
+
+        #stick {
+            max-width: 35px;
+        }
+
+        #stick {
+            transform: translateX(-15px);
+        }
+
+        .blogo {
+            max-width: 84px;
+        }
+
+        .infotext {
+            font-size: 13px;
+        }
     }
 </style>
 
@@ -82,7 +155,7 @@
         <div class="overlay">
         </div>
         <div class="behnodubkosec1">
-            <img class="blogo" style="max-width: 170px;" src="./behnologo.png" alt="behnologo">
+            <img class="blogo" src="./behnologo.png" alt="behnologo">
         </div>
         <div class="behnodubkosec2">
             <img id="stuck" src="./subkologo.png" alt="subkologo">
@@ -93,8 +166,12 @@
         <div class="behnodubkosec4">
             <img id="stick" src="./smallstick.png" alt="behnostick">
         </div>
-        <div class="behnodubkosec5">
-            <img style="max-width: 380px;" src="./behnosubkotext.png" alt="behnosubkotext">
+        <div class="behnodubkosec5" sty>
+            <!-- <img class="bhenotext" src="./behnosubkotext.png" alt="behnosubkotext"> -->
+            <p class="infotext">A luxurious tote inspired by the artisanal craftsmanship that both brands are known for
+                -- behno New
+                York's commitment to conscious, modern design and Subko's innovation in craft baking and specialty
+                coffee.</p>
         </div>
     </section>
     <div style="height: 70vh;"></div>
@@ -133,11 +210,11 @@
                 trigger: ".behnodubkosec2",
                 start: "30% 40%",
                 end: "bottom 40%",
-                markers: true,
+                // markers: true,
                 scrub: 3,
             }
         }).to("#stuck", {
-            x: 110,
+            x: 70,
             duration: 0.5
         })
 
@@ -163,7 +240,7 @@
                 scrub: 3,
             }
         }).to("#behnostuck", {
-            x: -70,
+            x: -110,
             duration: 0.5
         })
 
@@ -178,23 +255,47 @@
                 // markers: true,
             }
         })
-        // gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: ".behnodubkosec5",
-        //         start: "0% 30%",
-        //         end: "70% 70%",
-        //         scrub: 3,
-        //         pin: true,
-        //         pinSpacing: false,
-        //         markers: true
-        //     }
-        // })
+
+        let mm = gsap.matchMedia();
+
+        mm.add("(max-width: 500px)", () => {
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec2",
+                    start: "30% 40%",
+                    end: "bottom 40%",
+                    // markers: true,
+                    scrub: 3,
+                }
+            }).to("#stuck", {
+                x: 55,
+                duration: 0.5
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec3",
+                    start: "50% 80%",
+                    end: "bottom 80%",
+                    // markers: true,
+                    scrub: 3,
+                }
+            }).to("#behnostuck", {
+                x: -60,
+                duration: 0.5
+            })
+        });
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
         // Initialize Lenis
-        const lenis = new Lenis()
+        const lenis = new Lenis({
+            smoothWheel: true,   // Enable smooth scrolling for wheel events
+            wheelMultiplier: 0.3 // Change this value to control speed (default is 1)
+        })
 
         function raf(time) {
             lenis.raf(time)

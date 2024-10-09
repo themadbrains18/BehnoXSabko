@@ -21,6 +21,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
+        position: relative;
     }
 
 
@@ -30,6 +31,8 @@
         width: 100%;
         margin-top: -300px;
         height: 100vh;
+        position: absolute;
+        top: 80%;
     }
 
 
@@ -84,7 +87,8 @@
 
     .rightsideimagebox {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
+        gap: 100px;
         align-items: center;
         flex-direction: column;
     }
@@ -117,27 +121,32 @@
 
     @media screen and (max-width:991px) {
         .section2-bottomsection {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-around;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: -300px;
         }
-        .none{
+
+        .none {
             display: none;
         }
-        .section2-bottomsection {
+
+        /* .section2-bottomsection {
             margin-top: 0;
-        }
+        } */
 
         .section2 {
             background-image: url(./section2imageres.png);
         }
-.section2rightside{
-    margin-top: -300px;
-}
+
+        .section2rightside {
+            margin-top: -300px;
+        }
+
         .section2rightside {
             max-width: 300px;
-            margin-bottom: 173px;
+            margin-top: 173px;
             height: 100px;
             object-fit: cover;
         }
@@ -159,9 +168,7 @@ justify-content: space-around;
 <body>
 
 
-    <div class="section2">
-
-    </div>
+    <div class="section2"></div>
     <div class="section2-bottomsection">
         <div class="none"></div>
         <div class="rightsideimagebox">
@@ -174,8 +181,7 @@ justify-content: space-around;
             </div>
         </div>
     </div>
-    <div style="height: 400vh;">
-    </div>
+    <div style="height: 400vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -193,11 +199,11 @@ justify-content: space-around;
             scrollTrigger: {
                 trigger: ".section2",
                 start: "0% 0%",
-                end: "100% -100%",
+                end: "50% -100%",
                 scrub: 3,
                 pin: true,
                 pinSpacing: false,
-                // markers:true
+                markers: true
             }
         })
 
@@ -221,10 +227,10 @@ justify-content: space-around;
                 scrollTrigger: {
                     trigger: ".section2-bottomsection",
                     start: "top top",
-                    end: "100% bottom",
+                    end: "60% 60%",
                     scrub: 3,
                     pin: false,
-                    markers: true
+                    // markers: true
                 }
             })
         })

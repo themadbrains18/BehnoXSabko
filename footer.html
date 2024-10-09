@@ -121,10 +121,6 @@
             opacity: 0.3;
         }
 
-        .spacer {
-            /* height: 100vh; */
-        }
-
         .footersubko {
             max-width: 524px;
             width: 100%;
@@ -213,7 +209,6 @@
 
         </div>
     </section>
-    <div style="height: 100vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -241,17 +236,14 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
-        // Initialize Lenis
-        const lenis = new Lenis({
-            smoothWheel: true,   // Enable smooth scrolling for wheel events
-            wheelMultiplier: 0.3 // Change this value to control speed (default is 1)
+         const lenis = new Lenis({
+            duration: 3,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         })
-
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
-
         requestAnimationFrame(raf)
     </script>
 </body>

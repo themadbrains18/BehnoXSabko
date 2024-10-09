@@ -29,8 +29,7 @@
         width: 100%;
         margin-top: -300px;
         height: 100vh;
-        position: absolute;
-        top: 80%;
+        position: relative;
     }
 
     .limitededition {
@@ -154,6 +153,7 @@
 </style>
 
 <body>
+    <div style="height: 100vh;"></div>
     <div class="subkoscroll"></div>
     <div class="subkoscroll-bottomsection">
         <div class="none"></div>
@@ -179,7 +179,7 @@
             scrollTrigger: {
                 trigger: ".subkoscroll",
                 start: "0% 0%",
-                end: "50% top",
+                end: "100% 20%",
                 scrub: 3,
                 pin: true,
                 pinSpacing: false,

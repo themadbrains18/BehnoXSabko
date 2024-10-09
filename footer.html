@@ -109,7 +109,33 @@
         background-color: black;
         opacity: 0.3;
     }
-.section2rightside{}
+    .footersubko{
+        max-width: 524px; width: 100%;
+    }
+    @media screen and (max-width:991px) {
+        .footer-main{
+            grid-template-columns: 1fr;
+           }
+        .footer-left{
+            position: static;
+        }
+        
+    }
+    @media screen and (max-width:500px) {
+        .footer-main{
+            grid-template-columns: 1fr;
+           }
+        .footer-left{
+            position: static;
+            padding-top: 80px;
+            place-content: unset;
+            justify-items: center;
+        }
+        .footersubko{
+            max-width: 220px;
+        }
+    }
+
     </style>
 </head>
 
@@ -119,7 +145,7 @@
         </div>
 <div class="footer-main">
 <div class="footer-left">
-    <img src="./footersubko.png" alt="">
+    <img class="footersubko" src="./footersubko.png" alt="">
 </div>
 <div style="height: 0vh;"></div>
 <div style="height: 0vh;"></div>
@@ -146,17 +172,17 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script>
-            // gsap.timeline({
-            //     scrollTrigger:{
-            //         trigger:".footer",
-            //         start:"top top",
-            //         end:"bottom top",
-            //         markers:true,
-            //         pin:true,
-            //         pinSpacing:false,
-            //         scrub:3
-            //     }
-            // })
+            gsap.timeline({
+                scrollTrigger:{
+                    trigger:".footer-left",
+                    start:"top top",
+                    end:"center -30%",
+                    // markers:true,
+                    pin:true,
+                    pinSpacing:false,
+                    scrub:3
+                }
+            })
         </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>

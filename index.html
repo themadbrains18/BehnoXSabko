@@ -18,6 +18,7 @@
         background-image: url("subkobg.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         /* height: 500vh; */
         width: 100%;
         height: 100%;
@@ -74,6 +75,44 @@
         height: 50vh;
         display: grid;
         place-content: center;
+        padding: 0 20px;
+    }
+
+    #stick {
+        transform: translateX(-40px);
+    }
+
+    .bhenotext {
+        max-width: 380px;
+    }
+    .blogo{
+        max-width: 170px;
+    }
+
+    @media screen and (max-width:500px) {
+        .bhenotext {
+            max-width: 244px;
+            width: 100%;
+        }
+
+        #stuck {
+            max-width: 113px;
+        }
+
+        #behnostuck {
+            max-width: 66px;
+        }
+
+        #stick {
+            max-width: 35px;
+        }
+
+        #stick {
+            transform: translateX(-15px);
+        }
+        .blogo{
+            max-width: 84px;
+        }
     }
 </style>
 
@@ -82,7 +121,7 @@
         <div class="overlay">
         </div>
         <div class="behnodubkosec1">
-            <img class="blogo" style="max-width: 170px;" src="./behnologo.png" alt="behnologo">
+            <img class="blogo"  src="./behnologo.png" alt="behnologo">
         </div>
         <div class="behnodubkosec2">
             <img id="stuck" src="./subkologo.png" alt="subkologo">
@@ -93,8 +132,8 @@
         <div class="behnodubkosec4">
             <img id="stick" src="./smallstick.png" alt="behnostick">
         </div>
-        <div class="behnodubkosec5">
-            <img style="max-width: 380px;" src="./behnosubkotext.png" alt="behnosubkotext">
+        <div class="behnodubkosec5" sty>
+            <img class="bhenotext" src="./behnosubkotext.png" alt="behnosubkotext">
         </div>
     </section>
     <div style="height: 70vh;"></div>
@@ -133,11 +172,11 @@
                 trigger: ".behnodubkosec2",
                 start: "30% 40%",
                 end: "bottom 40%",
-                markers: true,
+                // markers: true,
                 scrub: 3,
             }
         }).to("#stuck", {
-            x: 110,
+            x: 70,
             duration: 0.5
         })
 
@@ -163,7 +202,7 @@
                 scrub: 3,
             }
         }).to("#behnostuck", {
-            x: -70,
+            x: -110,
             duration: 0.5
         })
 
@@ -178,11 +217,53 @@
                 // markers: true,
             }
         })
+
+        let mm = gsap.matchMedia();
+
+        mm.add("(max-width: 500px)", () => {
+            
+            gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec2",
+                start: "30% 40%",
+                end: "bottom 40%",
+                // markers: true,
+                scrub: 3,
+            }
+        }).to("#stuck", {
+            x: 55,
+            duration: 0.5
+        })
+
+            gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec3",
+                start: "50% 80%",
+                end: "bottom 80%",
+                // markers: true,
+                scrub: 3,
+            }
+        }).to("#behnostuck", {
+            x: -60,
+            duration: 0.5
+        })
+        });
         // gsap.timeline({
         //     scrollTrigger: {
         //         trigger: ".behnodubkosec5",
-        //         start: "0% 30%",
-        //         end: "70% 70%",
+        //         start: "0% 0%",
+        //         end: "70% 60%",
+        //         scrub: 3,
+        //         pin: true,
+        //         pinSpacing: false,
+        //         markers: true
+        //     }
+        // })
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".behnodubkosec5",
+        //         start: "0% 0%",
+        //         end: "70% 60%",
         //         scrub: 3,
         //         pin: true,
         //         pinSpacing: false,

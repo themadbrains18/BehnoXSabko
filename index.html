@@ -213,18 +213,7 @@
                 // markers: true
             }
         })
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".behnodubkosec2",
-                start: "30% 40%",
-                end: "bottom 40%",
-                // markers: true,
-                scrub: 3,
-            }
-        }).to("#stuck", {
-            x: 70,
-            duration: 0.5
-        })
+   
 
 
         gsap.timeline({
@@ -239,18 +228,7 @@
             }
         })
 
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: ".behnodubkosec3",
-                start: "50% 80%",
-                end: "bottom 80%",
-                // markers: true,
-                scrub: 3,
-            }
-        }).to("#behnostuck", {
-            x: -110,
-            duration: 0.5
-        })
+   
 
         gsap.timeline({
             scrollTrigger: {
@@ -266,6 +244,34 @@
 
         let mm = gsap.matchMedia();
 
+        mm.add("(min-width: 500px)", () => {
+
+            gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec2",
+                start: "30% 40%",
+                end: "bottom 40%",
+                // markers: true,
+                scrub: 3,
+            }
+        }).to("#stuck", {
+            x: 70,
+            duration: 0.5
+        })
+
+            gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec3",
+                start: "50% 80%",
+                end: "bottom 80%",
+                scrub: 3,
+            }
+        }).to("#behnostuck", {
+            x: -110,
+            duration: 0.5
+        })
+        })
+
         mm.add("(max-width: 500px)", () => {
 
             gsap.timeline({
@@ -278,7 +284,6 @@
                 }
             }).to("#stuck", {
                 x: 55,
-                duration: 0.5
             })
 
             gsap.timeline({
@@ -291,7 +296,6 @@
                 }
             }).to("#behnostuck", {
                 x: -60,
-                duration: 0.5
             })
         });
 

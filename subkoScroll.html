@@ -27,10 +27,7 @@
         display: grid;
         grid-template-columns: 50% 50%;
         width: 100%;
-        margin-top: -300px;
         height: 100vh;
-        position: relative;
-        
     }
 
     .limitededition {
@@ -118,13 +115,22 @@
         text-align: center;
     }
 
+    .subkoscroll-bottomsection {
+        position: absolute;
+        top: 30%;
+    }
+
+    .main {
+        position: relative;
+    }
+
     @media screen and (max-width:991px) {
+
         .subkoscroll-bottomsection {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            margin-top: -200px;
         }
 
         .none {
@@ -149,25 +155,27 @@
         .sectiontext2 {
             font-size: 20px;
         }
-
     }
 </style>
 
 <body>
     <div style="height: 100vh;"></div>
-    <div class="subkoscroll"></div>
-    <div class="subkoscroll-bottomsection">
-        <div class="none"></div>
-        <div class="rightsideimagebox">
-            <img class="subkoscrollrightside" src="subkoimage.png" alt="text_White">
-            <div class="limitededition">
-                <h2 class="sectiontext1">GET YOUR</h2>
-                <h2 class="sectiontext2">LIMITED EDITION</h2>
-                <h2 class="sectiontext3">BEHNO NEW YORK x SUBKO TOTE BAG</h2>
-                <button class="sourdoughbtn">GET YOUR SOURDOUGH TOTE</button>
+    <div class="main">
+        <div class="subkoscroll"></div>
+        <div class="subkoscroll-bottomsection">
+            <div class="none"></div>
+            <div class="rightsideimagebox">
+                <img class="subkoscrollrightside" src="subkoimage.png" alt="text_White">
+                <div class="limitededition">
+                    <h2 class="sectiontext1">GET YOUR</h2>
+                    <h2 class="sectiontext2">LIMITED EDITION</h2>
+                    <h2 class="sectiontext3">BEHNO NEW YORK x SUBKO TOTE BAG</h2>
+                    <button class="sourdoughbtn">GET YOUR SOURDOUGH TOTE</button>
+                </div>
             </div>
         </div>
     </div>
+
     <div style="height: 400vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
@@ -176,28 +184,28 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+
         gsap.timeline({
             scrollTrigger: {
                 trigger: ".subkoscroll",
                 start: "0% 0%",
-                end: "100% 20%",
+                end: "100% 50%",
                 scrub: 3,
                 pin: true,
-                pinSpacing: false,
+                pinSpacing: true,
             }
         })
 
         gsap.timeline({
             scrollTrigger: {
                 trigger: ".subkoscroll-bottomsection",
-                start: "50% 50%",
+                start: "50% 30%",
                 end: "50% top",
                 scrub: 3,
             }
         })
 
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
         const lenis = new Lenis({

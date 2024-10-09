@@ -13,7 +13,7 @@
         }
 
         .footer {
-            background: url("./footerbg.jpg");
+            background-image: url("./footerbg.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -131,34 +131,6 @@
             width: 100%;
         }
 
-        @media screen and (max-width:991px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-left {
-                position: static;
-                place-content: unset;
-                justify-items: center
-            }
-
-            .spacer {
-                display: none;
-            }
-            .footer {
-            background: url("./resfooter.jpg");
-        }
-
-            .limitededition {
-                padding: 10px 33px 13px 42px;
-            }
-
-            .footer-left {
-                padding-top: 78px;
-            }
-
-        }
-
         @media screen and (max-width:500px) {
             .footer-main {
                 grid-template-columns: 1fr;
@@ -176,8 +148,6 @@
                 max-width: 220px;
                 width: 100%;
             }
-
-
 
             .sectiontext2 {
                 font-size: 20px;
@@ -198,6 +168,32 @@
             }
 
         }
+
+        @media screen and (max-width:991px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-left {
+                position: static;
+                place-content: unset;
+                justify-items: center
+            }
+
+            .spacer {
+                display: none;
+            }
+
+
+            .limitededition {
+                padding: 10px 33px 13px 42px;
+            }
+
+            .footer-left {
+                padding-top: 78px;
+            }
+
+        }
     </style>
 </head>
 
@@ -207,7 +203,7 @@
         </div>
         <div class="footer-main">
             <div class="footer-left">
-                <img class="footersubko" src="./footersubko.png" alt="">
+                <img class="footersubko" src="./footersubko.png" alt="footersubko">
             </div>
             <div class="spacer"></div>
             <div class="spacer"></div>
@@ -248,11 +244,11 @@
                 }
             })
         })
-        
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
-         const lenis = new Lenis({
+        const lenis = new Lenis({
             duration: 3,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
         })

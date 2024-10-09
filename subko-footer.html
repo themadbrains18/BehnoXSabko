@@ -13,18 +13,16 @@
         }
 
         .footer {
-            background: url("./footerbg.jpg");
+            background-image: url("./footerbg.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            /* height: 300vh; */
             position: relative;
         }
 
         .footer-main {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            /* height: 100vh; */
             position: relative;
         }
 
@@ -34,6 +32,7 @@
             display: grid;
             place-content: center;
             height: 100vh;
+            width: 100%;
         }
 
         .sourdoughbtn {
@@ -42,6 +41,12 @@
             color: #000000;
             padding: 20px 18px 20px 16px;
             border-radius: 20px;
+            border: none;
+            font-family: Neue Haas Grotesk Text Pro;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 13.65px;
+            text-align: center;
         }
 
         .sectiontext1 {
@@ -116,15 +121,78 @@
             opacity: 0.3;
         }
 
+        .footersubko {
+            max-width: 524px;
+            width: 100%;
+        }
+
         .section2rightside {
             max-width: 430px;
             width: 100%;
         }
 
+        @media screen and (max-width:500px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
 
-        .footer-left img {
-            max-width: 524px;
-            width: 100%;
+            .footer-left {
+                position: static;
+                padding-top: 80px;
+                place-content: unset;
+                justify-items: center;
+                height: 100vh;
+            }
+
+            .footersubko {
+                max-width: 220px;
+                width: 100%;
+            }
+
+            .sectiontext2 {
+                font-size: 20px;
+            }
+
+            .sectiontext3 {
+                font-size: 10px;
+            }
+
+            .sectiontext1 {
+                font-size: 12px;
+            }
+
+            .sourdoughbtn {
+                padding: 12px;
+                text-wrap: nowrap;
+                font-size: 10px;
+            }
+
+        }
+
+        @media screen and (max-width:991px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-left {
+                position: static;
+                place-content: unset;
+                justify-items: center
+            }
+
+            .spacer {
+                display: none;
+            }
+
+
+            .limitededition {
+                padding: 10px 33px 13px 42px;
+            }
+
+            .footer-left {
+                padding-top: 78px;
+            }
+
         }
     </style>
 </head>
@@ -135,10 +203,10 @@
         </div>
         <div class="footer-main">
             <div class="footer-left">
-                <img src="./footersubko.png" alt="">
+                <img class="footersubko" src="./footersubko.png" alt="footersubko">
             </div>
-            <div style="height: 0vh;"></div>
-            <div style="height: 0vh;"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
             <div style=" height: 100vh; display: grid; place-content: center;">
                 <div class="rightsideimagebox">
                     <img class="section2rightside" src="fridabg.png" alt="text_White">
@@ -153,7 +221,6 @@
 
         </div>
     </section>
-    <div style="height: 100vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -162,8 +229,23 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-    </script>
 
+        let mm = gsap.matchMedia();
+
+        mm.add("(max-width: 991px)", () => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".footer-left",
+                    start: "top top",
+                    end: "center -20%",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: 3
+                }
+            })
+        })
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script>
         const lenis = new Lenis({

@@ -7,6 +7,11 @@
     <title>Document</title>
 
 </head>
+
+<!-- subkoscroll section csss -->
+
+
+
 <style>
     * {
         padding: 0%;
@@ -158,8 +163,198 @@
     }
 </style>
 
+<!-- subkoscroll section csss -->
+
+
+<!-- banner section csss -->
+
+
+
+<style>
+    .subko {
+        background-image: url("subkobg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* height: 500vh; */
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .overlay {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background-color: black;
+        opacity: 0.3;
+    }
+
+    .behnodubkosec1 {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        justify-items: end;
+        position: relative;
+        z-index: 3;
+    }
+
+    .behnodubkosec2 {
+        height: 65vh;
+        display: grid;
+        place-content: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    .behnodubkosec3 {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    .behnodubkosec4 {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    .behnodubkosec5 {
+        height: 50vh;
+        display: grid;
+        place-content: center;
+        padding: 0 20px;
+    }
+
+    #stick {
+        transform: translateX(-40px);
+    }
+
+    .bhenotext {
+        max-width: 380px;
+    }
+
+    .blogo {
+        max-width: 170px;
+    }
+
+    .infotext {
+        font-family: PP Editorial New;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 200;
+        line-height: 20.48px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #FFFFFF;
+        max-width: 380px;
+        width: 100%;
+    }
+
+    .section2 {
+        width: 100%;
+        height: 100vh;
+    }
+
+    @media screen and (max-width:400px) {
+        .subko {
+            background-image: url("mobilebg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* height: 500vh; */
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+    }
+
+    @media screen and (max-width:500px) {
+        .bhenotext {
+            max-width: 244px;
+            width: 100%;
+        }
+
+        #stuck {
+            max-width: 113px;
+        }
+
+        #behnostuck {
+            max-width: 66px;
+        }
+
+        #stick {
+            max-width: 35px;
+        }
+
+        #stick {
+            transform: translateX(-15px);
+        }
+
+        .blogo {
+            max-width: 84px;
+        }
+
+        .infotext {
+            font-size: 13px;
+        }
+    }
+</style>
+
+<!-- banner section csss -->
+
+
+
+
 <body>
-    <div style="height: 100vh;"></div>
+
+
+    <!-- banner section -->
+
+
+
+
+    <section class="subko" style="padding: 0 20px;">
+        <div class="overlay">
+        </div>
+        <div class="behnodubkosec1">
+            <img class="blogo" src="./behnologo.png" alt="behnologo">
+        </div>
+        <div class="behnodubkosec2">
+            <img id="stuck" src="./subkologo.png" alt="subkologo">
+        </div>
+        <div class="behnodubkosec3">
+            <img id="behnostuck" src="./smallbheno.png" alt="behnologo">
+        </div>
+        <div class="behnodubkosec4">
+            <img id="stick" src="./smallstick.png" alt="behnostick">
+        </div>
+        <div class="behnodubkosec5" sty>
+            <!-- <img class="bhenotext" src="./behnosubkotext.png" alt="behnosubkotext"> -->
+            <p class="infotext">A luxurious tote inspired by the artisanal craftsmanship that both brands are known for
+                -- behno New
+                York's commitment to conscious, modern design and Subko's innovation in craft baking and specialty
+                coffee.</p>
+        </div>
+    </section>
+
+
+
+    <!-- banner section -->
+
+
+
+
     <div class="main">
         <div class="subkoscroll"></div>
         <div class="subkoscroll-bottomsection">
@@ -175,8 +370,18 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    <!-- foterrrrr csssss -->
+
+
+
+
     <style>
- 
         .footer {
             background-image: url("./footerbg.jpg");
             background-repeat: no-repeat;
@@ -359,7 +564,22 @@
 
         }
     </style>
-      <section class="footer">
+
+
+
+
+    <!-- foterrrrr csssss -->
+
+
+
+
+    <!-- foterrrrr section -->
+
+
+
+
+
+    <section class="footer">
         <div class="overlay">
         </div>
         <div class="footer-main">
@@ -382,11 +602,19 @@
 
         </div>
     </section>
+
+
+
+    <!-- foterrrrr section -->
+
+
+
+
+
     <script>
 
 
     </script>
-    <div style="height: 400vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -394,6 +622,126 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+
+
+        // banner gsap
+
+
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec1",
+                start: "top 0%",
+                end: "20% top",
+                scrub: 3,
+                pin: true,
+                // markers: true,
+            }
+        })
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec2",
+                start: "50% 50%",
+                end: "bottom -50%",
+                scrub: 3,
+                pin: true,
+                pinSpacing: false,
+                // markers: true
+            }
+        })
+
+
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec3",
+                start: "50% 50%",
+                end: "bottom top",
+                pin: true,
+                pinSpacing: false,
+                scrub: 3,
+                // markers: true
+            }
+        })
+
+
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".behnodubkosec4",
+                start: "50% 50%",
+                end: "bottom 50%",
+                scrub: 3,
+                pin: true,
+                pinSpacing: false,
+                // markers: true,
+            }
+        })
+
+        let mm = gsap.matchMedia();
+
+
+        mm.add("(min-width: 500px)", () => {
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec2",
+                    start: "30% 40%",
+                    end: "bottom 40%",
+                    // markers: true,
+                    scrub: 3,
+                }
+            }).to("#stuck", {
+                x: 70,
+                duration: 0.5
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec3",
+                    start: "50% 80%",
+                    end: "bottom 80%",
+                    scrub: 3,
+                }
+            }).to("#behnostuck", {
+                x: -110,
+                duration: 0.5
+            })
+        })
+
+        mm.add("(max-width: 500px)", () => {
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec2",
+                    start: "30% 40%",
+                    end: "bottom 40%",
+                    // markers: true,
+                    scrub: 3,
+                }
+            }).to("#stuck", {
+                x: 55,
+            })
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".behnodubkosec3",
+                    start: "50% 80%",
+                    end: "bottom 80%",
+                    // markers: true,
+                    scrub: 3,
+                }
+            }).to("#behnostuck", {
+                x: -60,
+            })
+        });
+
+        // banner gsap
+
+
+        // subkoscroll gsap
+
 
         gsap.timeline({
             scrollTrigger: {
@@ -415,8 +763,11 @@
             }
         })
 
-        
-        let mm = gsap.matchMedia();
+        // subkoscroll gsap
+
+
+        // footer gsap
+
 
         mm.add("(max-width: 991px)", () => {
             gsap.timeline({
@@ -431,6 +782,8 @@
                 }
             })
         })
+
+        // footer gsap
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>

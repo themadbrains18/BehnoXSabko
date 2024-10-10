@@ -13,7 +13,7 @@
         }
 
         .footer {
-            background: url("./footerbg.jpg");
+            background-image: url("./footerbg.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -121,8 +121,6 @@
             opacity: 0.3;
         }
 
-
-
         .footersubko {
             max-width: 524px;
             width: 100%;
@@ -131,35 +129,6 @@
         .section2rightside {
             max-width: 430px;
             width: 100%;
-        }
-
-        @media screen and (max-width:991px) {
-            .footer-main {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-left {
-                position: static;
-                place-content: unset;
-                justify-items: center
-            }
-
-            .spacer {
-                display: none;
-            }
-
-            .footer {
-                background: url("./resfooter.jpg");
-            }
-
-            .limitededition {
-                padding: 10px 33px 13px 42px;
-            }
-
-            .footer-left {
-                padding-top: 78px;
-            }
-
         }
 
         @media screen and (max-width:500px) {
@@ -180,8 +149,6 @@
                 width: 100%;
             }
 
-
-
             .sectiontext2 {
                 font-size: 20px;
             }
@@ -201,6 +168,32 @@
             }
 
         }
+
+        @media screen and (max-width:991px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-left {
+                position: static;
+                place-content: unset;
+                justify-items: center
+            }
+
+            .spacer {
+                display: none;
+            }
+
+
+            .limitededition {
+                padding: 10px 33px 13px 42px;
+            }
+
+            .footer-left {
+                padding-top: 78px;
+            }
+
+        }
     </style>
 </head>
 
@@ -210,7 +203,7 @@
         </div>
         <div class="footer-main">
             <div class="footer-left">
-                <img class="footersubko" src="./footersubko.png" alt="">
+                <img class="footersubko" src="./footersubko.png" alt="footersubko">
             </div>
             <div class="spacer"></div>
             <div class="spacer"></div>
@@ -228,7 +221,6 @@
 
         </div>
     </section>
-    <div style="height: 100vh;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
